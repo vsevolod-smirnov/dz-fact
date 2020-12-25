@@ -1,27 +1,81 @@
-//есть вопросы как сделать задачу №4 из первого дз и вопрос к задаче №3 из второго дз;
 <?php
-echo '<br>';
-define("pi" , '3.14');
-echo pi .'<br>';
-echo '<br>';
-echo "Задача 1".'<br>';
-$i=5;
-while ($i<=18) {
-    echo $i .'<br>';
-    $i++;
-}
-echo '<br>'."Задача 2".'<br>';
-$num=1000;
-while ($num>50) {
-    $num=$num/2;
-    echo $num .'; ';
-}
-echo '<br>';
-for ($numb=1000;$numb>50;$numb=$numb/2){
-    echo $numb.'; ';
-}
+//дз от 22.12.2020
 
-?>
+for ($i=0;$i<10;$i++) {
+    $arr[$i]=mt_rand(0,100);
+    if ($arr[$i]%2==0){
+        echo '<i>'.$arr[$i].'</i>'.'<br>';
+    }
+    elseif ($arr[$i]%2==1) {
+        echo $arr[$i].'<br>';
+    }
+}
+$arr2= [
+        'Россия'=>['Арзамас','Москва','Питер'],
+       'Украина'=>['Ахтырка','Киев'],
+       'Белорусь'=>['Актау','Алматы']
+        ];
+foreach ($arr2 as $country => $city){
+    echo 'В '. $country.' есть такие города на а:'.'<br>';
+        foreach ($city as $keycity =>$namecity ){
+            if ((mb_substr($city[$keycity], 0,1,'utf-8') == 'А'))
+            {
+                echo $namecity.'<br>';
+            }
+        }
+}
+$arr3=[];
+$key=rand(1,3);
+/*for ($a=0;$a<5;$a++) {
+    $arr3[$a] = [];
+    $numb = rand(1, 2);
+    for ($b = 0; $b < $numb; $b++) {
+        $arr3[$b][$n] = rand(0, 100);
+    }
+
+    foreach ($arr3 as $value => $k) {
+        echo $value . ' :';
+        ;
+        foreach ($k as $value2 => $item2) {
+            echo $item2. ' ';
+            $sum++;
+
+        }
+        echo '<br>';
+    }
+}*/
+
+//$z=счетчик первого уровня
+//$x=cчетчик второго уровня
+//$arr4[]=исходный массив;
+$arr4=[];
+$zr=rand(1,5);
+echo $zr.'<hr>';
+for ($z=0;$z<$zr;$z++){
+    $xr=rand(1,3);
+
+    for ($x=0;$x<$xr;$x++){
+        $arr4[$z][$x]=rand(0,1000);
+    }
+}
+foreach ($arr4 as $value =>$k){
+    echo $value.' : ';
+    foreach($k as $value2 =>$k2) {
+        echo $k2 . ' ';
+        $sum++;
+    }
+    echo'<br>';
+    $sum_in++;
+}
+echo '<hr>';
+echo 'В массиве '.$sum_in.' массивов 1-го уровня'.'<br>';
+echo 'В массивах 2-го уровня '.$sum.' элементов';
+
+
+//дз от 25.12.2020
+
+
+    ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -32,59 +86,6 @@ for ($numb=1000;$numb>50;$numb=$numb/2){
     <title>Document</title>
 </head>
 <body>
-<form action="index.php" methode="GET">
-    <p>Введи значение переменной: </p><input type="number" name="number">
-    <input type="submit" name="submit" value="Отправить" />
-</form>
-<?php
- $n=$_GET["number"];
-echo $n.'<br>';
- if ($n=0)
-
-     {
-         echo '0,1,2,3,4,5,6,7,8,9,10'.'<br>';
-     }
- elseif($n=1)
- {
-     echo "0,1,2,3,4,5,6,7,8,9".'<br>';
- }
- elseif($n=2)
- {
-     echo "0,1,2,3,4,5,6,7,8".'<br>';
- }
- elseif($n=3)
- {
-     echo "0,1,2,3,4,5,6,7".'<br>';
- }
- elseif($n=4)
- {
-     echo "0,1,2,3,4,5,6,7".'<br>';
- }
- elseif($n=5)
- {
-     echo "0,1,2,3,4,5".'<br>';
- }
- elseif($n=6)
- {
-     echo "0,1,2,3,4".'<br>';
- }
- elseif($n=7)
- {
-     echo "0,1,2,3".'<br>';
- }
- elseif($n=8)
- {
-     echo "0,1,2".'<br>';
- }
- elseif($n=9)
- {
-     echo "0,1".'<br>';
- }
- elseif($n=10)
- {
-     echo "0".'<br>';
- }
-?>
 
 </body>
 </html>
