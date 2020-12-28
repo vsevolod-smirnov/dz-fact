@@ -1,5 +1,5 @@
 <?php
-//дз от 22.12.2020
+/*//дз от 22.12.2020
 
 for ($i=0;$i<10;$i++) {
     $arr[$i]=mt_rand(0,100);
@@ -48,6 +48,7 @@ $key=rand(1,3);
 //$z=счетчик первого уровня
 //$x=cчетчик второго уровня
 //$arr4[]=исходный массив;
+/*
 $arr4=[];
 $zr=rand(1,5);
 echo $zr.'<hr>';
@@ -70,10 +71,69 @@ foreach ($arr4 as $value =>$k){
 echo '<hr>';
 echo 'В массиве '.$sum_in.' массивов 1-го уровня'.'<br>';
 echo 'В массивах 2-го уровня '.$sum.' элементов';
+*/
+//////////
 
-///////
+
+//дз от 25.12
+
+/*Дана строка. Если в этой строке более 5-ти символов - вырежете из нее первые 5 символов,
+добавьте троеточие в конец и выведите на экран.
+Если же в этой строке 5 и менее символов - просто выведите эту строку на экран.*/
+
+//Задача 1
+
+$str="длина";
+if (mb_strlen($str)<=5) {
+ echo $str."<br>";
+}
+else if (mb_strlen($str)>5)  {
+    echo str_replace(mb_substr($str, 0,4),"",$str)."..."."<br>";
+}
+
+//Задача 2
+$str2="abc ABC Abc AbC";
+for ($i=0;$i<mb_strlen($str);$i++){
+    $str2=str_replace("a","1",$str2);
+    $str2=str_replace("b","2",$str2);
+    $str2=str_replace("c","3",$str2);
+
+}
+echo $str2."<br>";
+
+//задача 3
+$str3="abc abc abc";
+for ($k=0;$k<mb_strlen($str);$k++){
+    $str3=str_replace("b","1",$str3);
+    echo $str3."<br>";
+
+}
+//задача 4
+$str4="html css php ";
+echo print_r(str_word_count($str4,1))."<br>";
+
+//задача 5
+$date_1="22-12-2020";
+$date_2="24-12-2020";
+$d1=(int)mb_substr($date_1,0,mb_strpos($date_1,"-"));
+$d2=(int)mb_substr($date_2,0,mb_strpos($date_2,"-"));
+//echo $d1.",".$d2."<br>";
+$m1=(int)mb_substr($date_1,3,4);
+$m2=(int)mb_substr($date_2,3,4);
+echo $m1.",".$m2."<br>";
+$y1=(int)mb_substr($date_1,6,10);
+$y2=(int)mb_substr($date_2,6,10);
+echo $y1.",".$y2."<br>";
 
 
+/*if ($d1>$d2)
+{
+    echo $diff=$d1-$d2."<br>";
+}
+else if ($d1<=$d2){
+
+    echo ($diff=$d1-$d2+30)."<br>";
+}*/
     ?>
 <!doctype html>
 <html lang="en">
