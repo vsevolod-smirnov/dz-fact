@@ -82,7 +82,7 @@ echo 'В массивах 2-го уровня '.$sum.' элементов';
 Если же в этой строке 5 и менее символов - просто выведите эту строку на экран.*/
 
 //Задача 1
-
+/*
 $str="длина";
 if (mb_strlen($str)<=5) {
  echo $str."<br>";
@@ -125,7 +125,7 @@ $y1=(int)mb_substr($date_1,6,10);
 $y2=(int)mb_substr($date_2,6,10);
 echo $y1.",".$y2."<br>";
 
-
+*/
 /*if ($d1>$d2)
 {
     echo $diff=$d1-$d2."<br>";
@@ -134,6 +134,64 @@ else if ($d1<=$d2){
 
     echo ($diff=$d1-$d2+30)."<br>";
 }*/
+///////дз от 30.12
+//задача 1
+function rr()
+{
+
+  $k = rand(5,10);
+  for ($i=0;$i<$k; $i++)
+  {
+      $arr1[$i]=rand(0,10);
+  }
+  return $arr1;
+}
+ rr();
+echo "<pre>";
+print_r(rr());
+echo "</pre>";
+echo "<hr>";
+//задача 2
+$str1="HTML, CSS, PHP, BITRIX";
+function word_count($str)
+{
+    $arr2=str_word_count($str, 1);
+    echo count($arr2);
+
+}
+echo "Количетсво слов в строке равно ";
+echo word_count($str1);
+echo "<hr>";
+
+//задача 3;
+function reverse_str($str)
+{
+    echo strrev($str);
+}
+reverse_str($str1);
+echo "<hr>";
+//задача 4
+function str_len($str)
+{
+    return mb_strlen($str);
+
+}
+echo str_len($str1);
+echo "<hr>";
+
+//задача 5
+
+function br($str)
+{
+
+    for ($a=0;$a<mb_strlen($str);$a++)
+    {
+        $b=1;
+        echo mb_substr($str,$a,$b)."<br>";
+
+    }
+}
+br($str1);
     ?>
 <!doctype html>
 <html lang="en">
